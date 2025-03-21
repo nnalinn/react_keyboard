@@ -9,16 +9,16 @@ export class App extends React.Component<{}, State> {
     pressedKey: '',
   };
 
-  handleKeyPress = (event: KeyboardEvent) => {
+  onKeyPress = (event: KeyboardEvent) => {
     this.setState({ pressedKey: event.key });
   };
 
   componentDidMount() {
-    document.addEventListener('keyup', this.handleKeyPress);
+    document.addEventListener('keyup', this.onKeyPress);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keyup', this.handleKeyPress);
+    document.removeEventListener('keyup', this.onKeyPress);
   }
 
   render() {
